@@ -13,6 +13,7 @@
   <li *ngFor="let todo of todos">
     <div class="title">{{todo.title}}</div>
     <div class="description">{{todo.description}}</div>
+    <div class="date">{{todo.date | date: 'dd/MM/yyyy'}}</div>
     <div class="mark">
       <input id="mark-{{todo.id}}" type="checkbox" [checked]="todo.status" (change)="mark(todo)"/>
       <label for="mark-{{todo.id}}">mark as done</label>
