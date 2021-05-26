@@ -1,0 +1,25 @@
+<h2>Todo List</h2>
+<div class="new-todo">
+  <label for="new-todo-title">Todo Title: </label>
+  <input id="new-todo-title" class="new-todo-title" #todoTitle />
+  <label for="new-todo-description">Todo Description: </label>
+  <input id="new-todo-description" class="new-todo-description" #todoDescription />
+  <button class="add-button" (click)="add(todoTitle.value, todoDescription.value); todoTitle.value=''; todoDescription.value='';">
+    Add Todo
+  </button>
+</div>
+
+<ul class="todos" *ngIf="todos$ | async as todos; else elseBlock">
+  <li *ngFor="let todo of todos">
+    <div class="title">{{todo.title}}</div>
+    <div class="description">{{todo.description}}</div>
+    <div class="mark">
+      <input id="mark-{{todo.id}}" type="checkbox" [checked]="todo.status" (change)="mark(todo)"/>
+      <label for="mark-{{todo.id}}">mark as done</label>
+    </div>
+    <button class="delete" title="delete todo" (click)="delete(todo)">x</button>
+  </li>
+</ul>
+<ng-template #elseBlock>
+  <span>Loading</span>
+</ng-template>

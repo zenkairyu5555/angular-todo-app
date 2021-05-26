@@ -1,0 +1,81 @@
+/* todosComponent's private CSS styles */
+.todos {
+  margin: 0 0 0 0;
+  list-style-type: none;
+  padding: 0;
+  width: 1024px;
+}
+.todos li {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em .3em;
+  height: 1.6em;
+  border-radius: 4px;
+  .mark {
+    display: inline-flex;
+  }
+}
+.todos li:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+.todos li.selected {
+  background-color: black;
+  color: white;
+}
+.todos li.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+.todos li.selected:active {
+  background-color: black;
+  color: white;
+}
+.title {
+  width: 20%;
+}
+
+.description {
+  width: 40%;
+}
+.todos .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color:#405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.new-todo {
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+}
+.new-todo-title {
+  width: 100px;
+  margin: 20px;
+}
+.new-todo-description {
+  width: 200px;
+  margin: 20px;
+}
+
+input {
+  padding: .5rem;
+  cursor: pointer;
+}
